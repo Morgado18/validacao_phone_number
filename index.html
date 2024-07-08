@@ -1,0 +1,17 @@
+
+  <label for="telefone">Telefone</label>
+  <input minlength="11" maxlength="11"  id="telefone" type="text">
+  <script>
+      let input = document.getElementById("telefone");
+      input.addEventListener("input", function(event) {
+          var valorAtual = input.value.replace(/\D/g, "");
+          var novoValor = "";
+          for (var i = 0; i < valorAtual.length; i++) {
+              novoValor += valorAtual[i];
+              if ((i + 1) % 3 === 0 && i !== valorAtual.length - 1) {
+                  novoValor += " ";
+              }
+          }
+          input.value = novoValor;
+      });
+  </script>
